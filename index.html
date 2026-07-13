@@ -4,17 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Madeline Schemel | Senior Learning Experience Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --navy:#0B1F3B;
-      --blue:#1676D2;
-      --green:#1F7A63;
-      --bg:#F6F8FB;
-      --card:#FFFFFF;
-      --text:#1F2937;
-      --muted:#5B6577;
-      --line:#E5EAF1;
-      --shadow:0 14px 34px rgba(11,31,59,.08);
+      --navy:#1F2A37;
+      --cream:#F6F1E8;
+      --warm-white:#FBF8F3;
+      --camel:#BEA07A;
+      --olive:#7A8574;
+      --brown:#5D4A3A;
+      --bg:var(--cream);
+      --card:rgba(255,255,255,.72);
+      --card-solid:#FFFFFF;
+      --text:#24303B;
+      --muted:#6A6258;
+      --line:#DED5C8;
+      --shadow:0 14px 34px rgba(53,43,34,.08);
       --radius:22px;
       --max:1160px;
     }
@@ -22,7 +29,7 @@
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family:Arial, Helvetica, sans-serif;
+      font-family:'Inter', Arial, sans-serif;
       color:var(--text);
       background:var(--bg);
       line-height:1.6;
@@ -32,7 +39,7 @@
     .container{width:min(calc(100% - 32px), var(--max));margin:0 auto}
     .site-header{
       position:sticky;top:0;z-index:20;
-      background:rgba(246,248,251,.92);
+      background:rgba(246,241,232,.92);
       backdrop-filter:blur(12px);
       border-bottom:1px solid var(--line);
     }
@@ -40,15 +47,15 @@
       display:flex;justify-content:space-between;align-items:center;gap:20px;
       padding:16px 0;
     }
-    .brand{font-weight:700;color:var(--navy)}
-    .brand small{display:block;font-size:.82rem;color:var(--muted);font-weight:600;margin-top:2px}
+    .brand{font-weight:600;color:var(--navy);font-family:'Cormorant Garamond', serif;font-size:1.6rem;letter-spacing:.03em}
+    .brand small{display:block;font-size:.78rem;color:var(--muted);font-weight:600;margin-top:2px;font-family:'Inter', Arial, sans-serif;letter-spacing:.08em;text-transform:uppercase}
     .nav-links{display:flex;flex-wrap:wrap;gap:16px;color:var(--muted);font-size:.94rem}
-    .nav-links a:hover{color:var(--blue)}
+    .nav-links a:hover{color:var(--camel)}
     .hero{
       background:
-        radial-gradient(circle at top right, rgba(22,118,210,.18), transparent 26%),
-        radial-gradient(circle at left center, rgba(31,122,99,.14), transparent 22%),
-        linear-gradient(135deg, var(--navy) 0%, #123A80 100%);
+        radial-gradient(circle at top right, rgba(190,160,122,.20), transparent 28%),
+        radial-gradient(circle at left center, rgba(122,133,116,.16), transparent 24%),
+        linear-gradient(135deg, #1F2A37 0%, #314253 100%);
       color:white;
       padding:72px 0 56px;
     }
@@ -64,10 +71,10 @@
       letter-spacing:.16em;
       text-transform:uppercase;
       font-weight:700;
-      color:#9DE3CF;
+      color:#E4D3B8;
       margin-bottom:14px;
     }
-    h1,h2,h3,h4{margin:0 0 12px;line-height:1.12;color:var(--navy)}
+    h1,h2,h3,h4{margin:0 0 12px;line-height:1.12;color:var(--navy);font-family:'Cormorant Garamond', serif;letter-spacing:.01em}
     .hero h1,.hero h2,.hero h3,.hero p{color:white}
     h1{font-size:clamp(2.4rem, 5vw, 4.6rem)}
     h2{font-size:clamp(1.8rem, 3vw, 2.7rem)}
@@ -81,11 +88,12 @@
       transition:transform .18s ease;
     }
     .button:hover{transform:translateY(-1px)}
-    .button.primary{background:white;color:var(--navy)}
-    .button.secondary{background:transparent;color:white;border:1px solid rgba(255,255,255,.28)}
+    .button.primary{background:var(--warm-white);color:var(--navy)}
+    .button.secondary{background:transparent;color:white;border:1px solid rgba(255,255,255,.24)}
     .hero-panel{
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow:0 18px 42px rgba(10,13,18,.14);
       border-radius:26px;
       padding:24px;
     }
@@ -96,12 +104,12 @@
     }
     .stat{
       border-radius:18px;
-      background:rgba(255,255,255,.07);
+      background:rgba(255,255,255,.08);
       padding:16px;
     }
     .stat strong{display:block;font-size:1.5rem;margin-bottom:4px}
     .section{padding:72px 0}
-    .section.alt{background:linear-gradient(180deg, rgba(255,255,255,.7), rgba(246,248,251,.95))}
+    .section.alt{background:linear-gradient(180deg, rgba(255,252,246,.82), rgba(246,241,232,.96))}
     .lead{max-width:760px;color:var(--muted)}
     .cards-3{
       display:grid;
@@ -111,21 +119,22 @@
     }
     .card{
       background:var(--card);
-      border:1px solid var(--line);
+      border:1px solid rgba(222,213,200,.88);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
       padding:24px;
+      backdrop-filter:blur(8px);
     }
     .tag{
       display:inline-block;
       font-size:.78rem;
-      letter-spacing:.12em;
+      letter-spacing:.16em;
       text-transform:uppercase;
       font-weight:700;
-      color:var(--green);
+      color:var(--olive);
       margin-bottom:10px;
     }
-    .case-link{color:var(--blue);font-weight:700}
+    .case-link{color:var(--brown);font-weight:700}
     .about-grid{
       display:grid;
       grid-template-columns:.78fr 1.22fr;
@@ -134,11 +143,13 @@
       margin-top:28px;
     }
     .headshot-card{
-      background:var(--card);
+      background:var(--card-solid);
       border:1px solid var(--line);
       border-radius:28px;
       box-shadow:var(--shadow);
       overflow:hidden;
+      max-width:290px;
+      justify-self:center;
     }
     .headshot-card img{width:100%;height:100%;object-fit:cover}
     .bullets{padding-left:18px;margin:12px 0 0}
@@ -159,7 +170,7 @@
     .tool-card .num{
       width:42px;height:42px;border-radius:14px;
       display:flex;align-items:center;justify-content:center;
-      background:#EAF5F1;color:var(--green);font-weight:700;margin-bottom:14px;
+      background:#EFE6DA;color:var(--brown);font-weight:700;margin-bottom:14px;
     }
     .list{display:grid;gap:8px;color:var(--muted)}
     .case-study{
@@ -177,7 +188,7 @@
     }
     .pill{
       display:inline-flex;align-items:center;padding:8px 12px;
-      border-radius:999px;background:#EAF5F1;color:var(--green);
+      border-radius:999px;background:#EFE6DA;color:var(--brown);
       font-size:.82rem;font-weight:700;
     }
     .case-grid{
@@ -186,7 +197,7 @@
       gap:20px;
     }
     .mini{
-      background:#FBFCFE;
+      background:#F9F5EE;
       border:1px solid var(--line);
       border-radius:20px;
       padding:20px;
@@ -212,7 +223,7 @@
     .artifact p{margin:0;color:var(--muted)}
     .artifact a{
       white-space:nowrap;
-      color:var(--blue);
+      color:var(--camel);
       font-weight:700;
     }
     .contact-card{
@@ -224,7 +235,7 @@
       margin-top:28px;
     }
     .contact-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
-    .button.blue{background:var(--blue);color:white}
+    .button.blue{background:var(--navy);color:white}
     .button.ghost{background:transparent;color:var(--navy);border:1px solid var(--line)}
     footer{padding:28px 0 52px;color:var(--muted);font-size:.92rem}
     @media (max-width: 980px){
@@ -249,7 +260,7 @@
       <nav class="nav-links">
         <a href="#about">About</a>
         <a href="#tools">Tools</a>
-        <a href="#featured">Projects</a>
+        <a href="#featured">Selected Work</a>
         <a href="#ai">AI Initiative</a>
         <a href="#epic">Epic</a>
         <a href="#hubstart">HUB Start</a>
@@ -262,8 +273,8 @@
     <div class="container hero-grid">
       <div>
         <span class="eyebrow">Learning Experience Design Portfolio</span>
-        <h1>Enterprise learning strategy, AI enablement, and digital learning transformation.</h1>
-        <p>I design scalable learning experiences that help organizations adopt new technologies, strengthen workforce capability, and improve performance at scale. My portfolio showcases enterprise onboarding, workflow change training, and AI learning strategy built for large, distributed teams.</p>
+        <h1>Thoughtful learning design for enterprise change, capability building, and modern adoption.</h1>
+        <p>I design polished, scalable learning experiences that help organizations navigate change, adopt new technologies, and build workforce capability with confidence. My work spans enterprise onboarding, workflow change training, and AI enablement for large, distributed teams.</p>
         <div class="hero-actions">
           <a class="button primary" href="#featured">View Case Studies</a>
           <a class="button secondary" href="docs/madeline-schemel-resume.pdf" target="_blank">Download Resume</a>
@@ -296,8 +307,8 @@
   <section class="section alt" id="featured">
     <div class="container">
       <span class="tag">Featured Work</span>
-      <h2>Three enterprise case studies built for senior-level learning roles.</h2>
-      <p class="lead">This portfolio is structured around business challenges, learning strategy, and artifacts that demonstrate how I design for adoption, clarity, and scale.</p>
+      <h2>Selected work designed to reflect strategic, polished, senior-level learning design.</h2>
+      <p class="lead">This portfolio is structured around business challenges, learning strategy, and thoughtfully designed artifacts that reflect clarity, adoption, and scale.</p>
 
       <div class="cards-3">
         <div class="card">
@@ -416,7 +427,7 @@
         <div>
           <span class="tag">Case Study 01</span>
           <h2>Enterprise AI Learning Initiative</h2>
-          <p class="lead">An emerging enterprise AI enablement effort focused on building internal curriculum, practical adoption resources, and scalable learning support.</p>
+          <p class="lead">An enterprise AI enablement effort focused on building foundational AI capability, responsible usage, and leadership readiness across the organization.</p>
         </div>
         <span class="pill">AI Literacy + Adoption</span>
       </div>
@@ -428,7 +439,7 @@
         </div>
         <div class="mini">
           <h3>My Role</h3>
-          <p>I am helping build the enterprise AI learning foundation through internal curriculum development, practical demonstrations, and enablement resources. This includes shaping learning content internally while also supporting broader development pathways through Udemy.</p>
+          <p>I am helping build the enterprise AI learning foundation through internal curriculum development, practical enablement resources, and leadership-focused training. This includes shaping internal learning content while also supporting broader development pathways through Udemy.</p>
         </div>
         <div class="mini">
           <h3>Solution</h3>
@@ -437,8 +448,8 @@
         <div class="mini">
           <h3>Current Focus</h3>
           <ul class="impact-list">
-            <li>Build a structured AI learning curriculum</li>
-            <li>Create practical, low-barrier learning resources</li>
+            <li>Build a structured AI learning journey from awareness to applied use</li>
+            <li>Create practical training for both employees and leaders</li>
             <li>Support employee success through internal learning and external pathways</li>
           </ul>
         </div>
@@ -447,17 +458,24 @@
       <div class="artifact-list">
         <div class="artifact">
           <div>
-            <h4>How I AI Video Demonstration</h4>
-            <p>Short learning video demonstrating practical Claude use cases for employees.</p>
+            <h4>AI Learning Journey</h4>
+            <p>Structured learning journey showing how employees progress from AI awareness and foundational prompting to practical workplace application and leadership enablement.</p>
           </div>
-          <a href="artifacts/ai/how-i-ai-demo.mp4" target="_blank">Watch video</a>
+          <a href="docs/ai-learning-journey.pdf" target="_blank">Open PPT</a>
         </div>
         <div class="artifact">
           <div>
-            <h4>AI Video Series Content Roadmap</h4>
-            <p>Curriculum plan showing monthly AI learning topics and expanded short-form content strategy.</p>
+            <h4>AI Essentials (vILT)</h4>
+            <p>Foundational virtual instructor-led training designed to introduce employees to practical AI use cases, prompt writing, and responsible AI usage in the workplace.</p>
           </div>
-          <a href="docs/ai-video-topics.pdf" target="_blank">View document</a>
+          <a href="docs/ai-essentials.zip" target="_blank">Open Presentation</a>
+        </div>
+        <div class="artifact">
+          <div>
+            <h4>AI Essentials for Leaders (vILT)</h4>
+            <p>Leadership-focused virtual instructor-led training designed to help managers guide AI adoption, encourage responsible usage, and identify opportunities for team efficiency.</p>
+          </div>
+          <a href="docs/ai-essentials-for-leaders.zip" target="_blank">Open Presentation</a>
         </div>
         <div class="artifact">
           <div>
@@ -591,14 +609,14 @@
             <h4>HUB Start Cancellation Training vILT</h4>
             <p>Virtual instructor-led training used to guide new employees through cancellation workflows and system processes.</p>
           </div>
-          <a href="docs/cancellations-vilt-pt1.pdf" target="_blank">Open PDF</a>
+          <a href="docs/cancellations-vilt-pt1.zip" target="_blank">Open Presentation</a>
         </div>
         <div class="artifact">
           <div>
             <h4>HUB Start Cancellation Training vILT Part 2</h4>
             <p>Continuation vILT expanding on cancellation workflows, reinforcing key system tasks and learner practice scenarios.</p>
           </div>
-          <a href="docs/cancellations-vilt-pt2.pdf" target="_blank">Open PDF</a>
+          <a href="docs/cancellations-vilt-pt2.zip" target="_blank">Open Presentation</a>
         </div>
       </div>
     </div>
